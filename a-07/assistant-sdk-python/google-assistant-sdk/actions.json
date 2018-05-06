@@ -1,0 +1,54 @@
+{
+    "manifest": {
+        "displayName": "LED brightness",
+        "invocationName": "LED brightness",
+        "category": "PRODUCTIVITY"
+    },
+    "actions": [
+        {
+            "name": "ro.upt.ms.actions.increase_brightness",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "ro.upt.ms.intents.increase_brightness",
+                "parameters": [
+                    {
+                        "name": "number",
+                        "type": "SchemaOrg_Number"
+                    }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "increase the brightness by $SchemaOrg_Number:number percent"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Increasing the brightness by $number percent"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "ro.upt.ms.commands.increase_brightness",
+                                    "params": {
+                                        "number": "$number"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

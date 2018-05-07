@@ -114,18 +114,18 @@ bindingoffset=0mm, top=20mm,bottom=20mm}
 
 
 \textit{The purpose of this document is to provide a comprehensive documentation template.\\
-Some parts of the presented information might be dummy but it helps to emulate specific concerns.
+Some sections from the overall information might be dummy but it helps to emulate specific concerns.
 Paragraphs formatted using the italic style provide in-place advice. They should not be contained in your project documentation.
 Provided LATEX source file should be used as base format to write your documentation.
 }
 
 \section{Repository}
-\textit{Related files to your work must be placed within a version control repository. I strongly suggest to use Github but any git system should just be fine.}\\\\
-The project history, schematics, diagrams and codebase are contained under the following git repository:\\
+\textit{Related files to your work must be placed within a version control system. I strongly suggest to use Github but any git system should just be fine.}\\\\
+Schematics, diagrams and codebase are contained under the following git repository:\\
 \textbf{\url{https://github.com/claudiugroza/msa}}
 
 \section{User requirements}
-\textit{Imagine talking to a person without any technical background. User requirements should express the intentions of a common user and not how you pan to engineer the system.}
+\textit{Imagine talking to a person without any technical background. User requirements should express the intentions of a common user and not how you plan to engineer the system.}
 
 \begin{enumerate}  
 \item The system must provide information relevant to temperature and humidity in a certain area.
@@ -163,7 +163,7 @@ Web consumer provides a UI interpretation for the data stored in the Cloud Stora
 Mobile consumer also provides a UI interpretation for the stored data. The view will be accessed via a specialised application which runs on a mobile device.
 
 \section{Circuit design}
-\textit{Provide a detailed perspective of the hardware components you’ve used in your project. You can use Fritzing tool to draw circuit schematics.}\\
+\textit{Provide a detailed perspective of the hardware components you’ve used in your project. You can use Fritzing tool to draw the schematics.}\\
 
 The hardware view of the system is depicted in Figure \ref{fig:circuit-design}.
 
@@ -182,7 +182,7 @@ The wiring of the components can be observed in Figure \ref{fig:circuit-design}.
 
 
 \section{Software design}
-\textit{Provide a walktrough of the most important component/modules/entities or concepts you implemented on the software.}\\
+\textit{Provide a walktrough of the most important components/modules/entities or concepts you've implemented in the software section.}\\
 
 The software components and data flow directions are depicted in Figure \ref{fig:soft-design}. Each of these will be presented in the following subsections.\\
 
@@ -201,7 +201,7 @@ write\_firebase\_sensor.py: it retrieves the temperature and humidity tuple from
 Adafruit\_DHT22 library: it provides a quick implementation of one-wire interface communication with the sensor.
 
 \subsection{Firebase}
-\textit{Describe the purpose of the service and present some specifics you are using.}\\
+\textit{Describe the purpose of the service and present the specifics you are using.}\\
 
 Firebase is a PaaS (Platform as a Service) which means it offers developers to a quick list of functionalities supported by a traditional backend.
 Realtime Database simplifies storing and synchronising data between different devices in realtime using a noSQL database.
@@ -223,7 +223,7 @@ firebase = firebase.FirebaseApplication(FIREBASE_ROOT, None)
 \textit{Give a brief description of the main parts contained by the JavaScript module.}
 
 \section{Results and further work}
-\textit{Described what you accomplished so far, then what you plan to improve or extend.}\\
+\textit{Describe what you accomplished so far, then what you plan to improve or extend.}\\
 
 The current version of the project supports the following functionalities:
 \begin{itemize}  

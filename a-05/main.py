@@ -1,4 +1,4 @@
-import temperature #temperature stub
+import sensor #sensor stub
 import plotly.plotly as plot #plotly API
 import json #extract credentials
 import time #delay
@@ -33,10 +33,12 @@ def init_plotly_stream():
     return stream
 
 def read_and_post(stream):
-    # read temperature from our stub module
-    temp = temperature.read_temp()
+    # read temperature from our sensor module
+    temp = sensor.read_temp()
+    
     # post data to plotly
-    stream.write({'x': datetime.datetime.now(), 'y': temp})
+    if temp is not None:
+        stream.write({'x': datetime.datetime.now(), 'y': temp})
 
 def main():
     # stream setup

@@ -17,7 +17,7 @@ def post_tweet():
     # update twitter status ~ post a tweet
     twitter_api.update_status(status=tweet_text)
     # log posted message for easy tracking
-    print 'posted: ', tweet_text
+    print('posted: ', tweet_text)
 
 
 # tweet once

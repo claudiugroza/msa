@@ -1,4 +1,5 @@
 from twython import TwythonStreamer
+import pprint
 
 
 # generated credentials from Twitter API
@@ -19,10 +20,10 @@ class NearbyTwythonStreamer(TwythonStreamer):
 
     def on_success(self, data):
         if 'text' in data:
-            print 'new post: {0}'.format(data['text'])
+            print('new post: {0}'.format(str(data['text'])))
 
     def on_error(self, status_code, data):
-        print '{0}:{1}'.format(status_code, data['text'])
+        print('{0}:{1}'.format(str(status_code), pprint.pprint(data)))
 
     def find_nearby(self):
         self.statuses.filter(track=self.nearby)

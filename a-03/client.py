@@ -13,12 +13,12 @@ def send(server_address, state):
         # prepare a dictionary
         value = {'state' : state}
         # encode object
-        encoded_object = json.dumps(value)
+        encoded_object = json.dumps(value).encode()
         # send data
         sock.sendall(encoded_object)
-        print '{} sent {}'.format(time.strftime("%H:%M:%S"), encoded_object)
+        print('{} sent {}'.format(time.strftime("%H:%M:%S"), encoded_object))
     finally:
-        print 'closing socket'
+        print('closing socket')
         sock.close()
 
 

@@ -11,7 +11,7 @@ def setup_gpio(pin):
 
 
 def set_output(pin, value):
-    print 'setting "{}" to pin {}'.format(value, pin)
+    print('setting {} to pin {}'.format(value, pin))
     GPIO.output(pin, value)
 
 
@@ -24,12 +24,12 @@ def listen(server_address, pin):
     sock.listen(5)
 
     while True:
-        print 'waiting connection'
+        print('waiting connection')
         connection, client_address = sock.accept()
 
         buff = b''
         try:
-            print '{} connected to {}'.format(time.strftime("%H:%M:%S"), client_address)
+            print('{} connected to {}'.format(time.strftime("%H:%M:%S"), client_address))
             while True:
                 # receive data in chunks
                 data = connection.recv(8)
@@ -44,7 +44,7 @@ def listen(server_address, pin):
             # write LED state
             set_output(pin, state)
         finally:
-            print '{} disconnected from {}'.format(time.strftime("%H:%M:%S"), client_address)
+            print('{} disconnected from {}'.format(time.strftime("%H:%M:%S"), client_address))
             connection.close()
 
 

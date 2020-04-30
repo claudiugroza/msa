@@ -12,6 +12,6 @@ while True:
     # execute a GET request on the node
     result = firebase.get('/sensor', None)
     # log the result
-    print result
+    print (result)
     # wait 1 second between two consecutive requests
     time.sleep(1)

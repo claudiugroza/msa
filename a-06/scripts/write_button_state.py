@@ -16,7 +16,7 @@ def write_button_state(state):
     value = {BOARD_NAME : state}
     # prefer update of the node
     result = firebase.patch('/boards', value)
-    print result
+    print (result)
 
 
 # mock a value and then push 

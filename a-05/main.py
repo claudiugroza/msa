@@ -1,5 +1,5 @@
 import sensor #sensor stub
-import plotly.plotly as plot #plotly API
+import chart_studio.plotly as plot #plotly API
 import json #extract credentials
 import time #delay
 import datetime #temp-time chart association
@@ -25,7 +25,7 @@ def init_plotly_stream():
                 },
         }], filename='MS-Temperature')
 
-    print "View your streaming graph here: ", url
+    print ("View your streaming graph here: ", url)
 
     # attach a stream to the plot
     stream = plot.Stream(plotly_user_config['plotly_streaming_tokens'][0])
@@ -44,6 +44,8 @@ def main():
     # stream setup
     stream = init_plotly_stream()
     stream.open()
+
+    time.sleep(5)
 
     while True:
         # it's time to perform a reading
